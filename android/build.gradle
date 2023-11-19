@@ -1,0 +1,47 @@
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = "mapbox"
+                // Use the secret token you stored in gradle.properties as the password
+                password = "sk.eyJ1IjoibmF2ZWVuLW1hcGJveCIsImEiOiJjbHA0MXN5Z3gwYjY0MnFxbnNrN3d0cThrIn0.Xs1ootEpcSFZZAFvSjKWdA"
+            }
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        // START: FlutterFire Configuration
+        classpath 'com.google.gms:google-services:4.3.10'
+        // END: FlutterFire Configuration
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "727353165979",
+    "project_id": "tapn-nmaps-test",
+    "storage_bucket": "tapn-nmaps-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727353165979:android:f2745dcbf329e625e2de3e",
+        "android_client_info": {
+          "package_name": "com.renati.tapn.tapnmaps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHmK1FzVgFhVwjf4pJnUYXpuCo5bvWX1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
